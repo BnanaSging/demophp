@@ -3,38 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PHP DEMO</title>
 </head>
 <body>
-    <form action="output.php" method="post">
+   
+        <?php if(isset($_GET["error"])) { ?>
+    <p style="background-color: red; color: aliceblue"><?php echo $_GET["error"] ?></p>
+    <?php } ?>
 
-        <div>
-         <label for="username">username </label>
-        <input type="text" name="username" id="username">
+    <?php if(isset($_GET["success"])) { ?>
+    <p style="background-color: green; color: aliceblue"><?php echo $_GET["success"] ?></p>
+    <?php } ?>
+    
+<form action="output.php" method="POST">
+    <div>
+        <label for="username">Username</label>
+        <input type="username" name="username" id="username">
         </div>
-       
-        <div>
-        <label for="email">email</label>
+    <div>
+
+        <label for="email">Email</label>
         <input type="email" name="email" id="email">
         </div>
-        
+
 
         <div>
-        <label for="passsword">password</label>
-        <input type="password" name="password" id="password">
+            <label for="password1">Password</label>
+            <input type="password" name="password1" id="password1">
+        </div>
 
-        </div>
-        
         <div>
-        <label for="confirm-password">confirm password</label>
-        <input type="password" name="confirm-password" id="confirm-password">
+            <label for="comfirm_password">Confirm Password</label>
+            <input type="password" name="confirm-password" id="confirm-password">
         </div>
-        
-        <div>
-        <input type="submit" value="register">
-        </div>
-        
-    
+
+        <input type="submit" value="Register">
     </form>
 </body>
 </html>
